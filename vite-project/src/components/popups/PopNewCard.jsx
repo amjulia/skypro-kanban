@@ -1,5 +1,5 @@
 function PopNewCard() {
-    return <div className="pop-new-card__container">
+    return ( <div className="pop-new-card__container">
         <div className="pop-new-card__block">
             <div className="pop-new-card__content">
                 <h3 className="pop-new-card__ttl">Создание задачи</h3>
@@ -107,6 +107,7 @@ function PopNewCard() {
             </div>
         </div>
     </div>
+    )
 
 }
 

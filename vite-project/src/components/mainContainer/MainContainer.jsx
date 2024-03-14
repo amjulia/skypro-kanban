@@ -1,4 +1,3 @@
-import allCards from "../card/Card";
 import Column from "../column/Column";
 
 
@@ -12,9 +11,7 @@ function MainContainer() {
             <Column name={"В работе"} />
             <Column name={"Тестирование"} />
             <Column name={"Готово"} />
-       
-       
-               
+                      
            </div>
        
        </div>

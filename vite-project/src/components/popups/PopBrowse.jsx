@@ -1,7 +1,7 @@
 import Calendar from "../calendar/Calendar";
 
 function PopBrowse () {
-    return <div className="pop-browse__container">
+    return ( <div className="pop-browse__container">
         <div className="pop-browse__block">
             <div className="pop-browse__content">
                 <div className="pop-browse__top-block">
@@ -89,6 +89,6 @@ function PopBrowse () {
             </div>
         </div>
     </div>
-
+)
 }
 export default PopBrowse;
