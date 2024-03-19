@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { allCards } from "../../../data";
+import { useState } from "react";
 
-function Header() {
+
+function Header({onCardAdd}) {
     const [isOpen, setIsOpen] = useState(false);
   const ToggleDropdown = () => setIsOpen((prevState) => !prevState);
 
@@ -14,7 +14,7 @@ function Header() {
             <a href="" target="_self"><img src="images/logo_dark.png" alt="logo"/></a>
         </div>
         <nav className="header__nav">
-            <button className="header__btn-main-new _hover01" id="btnMainNew" ><a href="#popNewCard" >Создать новую задачу</a></button>
+            <button className="header__btn-main-new _hover01" id="btnMainNew" onClick={onCardAdd}>Создать новую задачу</button>
             <a href="#user-set-target" className="header__user _hover02" onClick={ToggleDropdown} >Ivan Ivanov</a>
             {isOpen && (<div className="header__pop-user-set pop-user-set" id="user-set-target">
                 

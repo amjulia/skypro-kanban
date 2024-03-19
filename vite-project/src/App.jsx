@@ -5,10 +5,25 @@ import PopNewCard from './components/popups/PopNewCard';
 import PopBrowse from './components/popups/PopBrowse';
 import MainContainer from './components/mainContainer/MainContainer';
 import PopUser from './components/popups/PopUser';
+import { useState } from "react";
+import { allCards } from '../data';
+
 
 
 function App() {
-
+	const [cards, setCards] = useState(allCards);
+	const onCardAdd = () => {
+		const newCard = {
+			id: cards.length + 1,
+			theme: "Новая задача",
+			title: "Новая задача",
+			date: "30.10.23",
+			status: "Без статуса",
+			style: "card__theme _orange"
+		}
+		setCards([...cards, newCard])
+		
+	}
   return (
     <>
      
@@ -28,11 +43,11 @@ function App() {
 			</div>
 		
 		<header className="header">
-			<Header />
+			<Header onCardAdd={onCardAdd} />
 		</header>
 
 		<main className="main">
-			<MainContainer />
+			<MainContainer cards={cards}  />
 		</main>
 		
     </div>
