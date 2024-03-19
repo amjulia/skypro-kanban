@@ -6,11 +6,11 @@ function MainContainer() {
        
        <div className="main__block">
            <div className="main__content">
-            <Column name={"Без статуса"} />
-            <Column name={"Нужно сделать"} />
-            <Column name={"В работе"} />
-            <Column name={"Тестирование"} />
-            <Column name={"Готово"} />
+            <Column title={"Без статуса"} />
+            <Column title={"Нужно сделать"} />
+            <Column title={"В работе"} />
+            <Column title={"Тестирование"} />
+            <Column title={"Готово"} />
                       
            </div>
        
