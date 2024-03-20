@@ -5,7 +5,7 @@ import PopNewCard from './components/popups/PopNewCard';
 import PopBrowse from './components/popups/PopBrowse';
 import MainContainer from './components/mainContainer/MainContainer';
 import PopUser from './components/popups/PopUser';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { allCards } from '../data';
 
 
@@ -24,6 +24,12 @@ function App() {
 		setCards([...cards, newCard])
 		
 	}
+	const [isLoading, setIsLoading] = useState(true);
+	useEffect(() => {
+		setTimeout(() => {
+		  setIsLoading(false);
+		}, 2000); 
+	  }, []);
   return (
     <>
      
@@ -45,10 +51,11 @@ function App() {
 		<header className="header">
 			<Header onCardAdd={onCardAdd} />
 		</header>
-
-		<main className="main">
-			<MainContainer cards={cards}  />
-		</main>
+{isLoading ? (<p className="loading"> Загрузка...</p>) :
+(<main className="main">
+<MainContainer cards={cards}  />
+</main>)}
+		
 		
     </div>
 

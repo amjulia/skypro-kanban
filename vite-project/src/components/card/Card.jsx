@@ -1,5 +1,6 @@
 
 function Card({theme, title, date, style}) {
+    
         return (<div className="cards__item">
       <div className="cards__card card">
           <div className="card__group">

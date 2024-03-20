@@ -8,13 +8,12 @@ const statusList = [
   ];
 
 function MainContainer({cards}) {
-    
-    return (
+   return (
     <div className="container">
         <div className="main__block">
            <div className="main__content">
                 {statusList.map((status) => {
-                <Column
+                return <Column
                 key={status}
                 title={status}
                 allCards={cards.filter((card) => card.status === status)}
