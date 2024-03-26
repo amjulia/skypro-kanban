@@ -1,12 +1,14 @@
 import { useState } from "react";
+import * as S from "./Header.styled";
 
 function Header({ onCardAdd }) {
   const [isOpen, setIsOpen] = useState(false);
   const ToggleDropdown = () => setIsOpen((prevState) => !prevState);
 
   return (
-    <div className="container">
-      <div className="header__block">
+    <S.Header>
+    <S.Container>
+      <S.Header__block>
         <div className="header__logo _show _light">
           <a href="" target="_self">
             <img src="images/logo.png" alt="logo" />
@@ -17,36 +19,36 @@ function Header({ onCardAdd }) {
             <img src="images/logo_dark.png" alt="logo" />
           </a>
         </div>
-        <nav className="header__nav">
-          <button
-            className="header__btn-main-new _hover01"
+        <S.Header__nav>
+          <S.Button
             id="btnMainNew"
             onClick={onCardAdd}
           >
             Создать новую задачу
-          </button>
-          <a onClick={ToggleDropdown} className="header__user _hover02">
+          </S.Button>
+          <S.Header__user onClick={ToggleDropdown} >
             Ivan Ivanov
-          </a>
+          </S.Header__user>
           {isOpen && (
-            <div
-              className="header__pop-user-set pop-user-set"
+            <S.HeaderPop
+              className="pop-user-set"
               id="user-set-target"
             >
-              <p className="pop-user-set__name">Ivan Ivanov</p>
-              <p className="pop-user-set__mail">ivan.ivanov@gmail.com</p>
-              <div className="pop-user-set__theme">
-                <p>Темная тема</p>
-                <input type="checkbox" className="checkbox" name="checkbox" />
-              </div>
-              <button type="button" className="_hover03">
+              <S.PopUserSetName>Ivan Ivanov</S.PopUserSetName>
+              <S.PopUserSetMail>ivan.ivanov@gmail.com</S.PopUserSetMail>
+              <S.PopUserSetTheme>
+                <S.PopUserSetThemeP>Темная тема</S.PopUserSetThemeP>
+                <S.PopUserSetThemeInput type="checkbox" name="checkbox" />
+              </S.PopUserSetTheme>
+              <S.ButtonExit >
                 <a href="#popExit">Выйти</a>
-              </button>
-            </div>
+              </S.ButtonExit>
+            </S.HeaderPop>
           )}
-        </nav>
-      </div>
-    </div>
+        </S.Header__nav>
+      </S.Header__block>
+    </S.Container>
+    </S.Header>
   );
 }
 

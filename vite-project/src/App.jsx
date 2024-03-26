@@ -6,6 +6,8 @@ import MainContainer from "./components/mainContainer/MainContainer";
 import PopUser from "./components/popups/PopUser";
 import { useState, useEffect } from "react";
 import { allCards } from "../data";
+import { GlobalStyle } from "./components/Global.styled";
+import { Loading, Wrapper } from "./App.styled";
 
 function App() {
   const [cards, setCards] = useState(allCards);
@@ -28,30 +30,19 @@ function App() {
   }, []);
   return (
     <>
-      <div className="wrapper">
-        <div className="pop-exit" id="popExit">
-          <PopUser />
-        </div>
+      <GlobalStyle />
+      <Wrapper>
+        <PopUser />
+        <PopNewCard />
+        <PopBrowse />
 
-        <div className="pop-new-card" id="popNewCard">
-          <PopNewCard />
-        </div>
-
-        <div className="pop-browse" id="popBrowse">
-          <PopBrowse />
-        </div>
-
-        <header className="header">
-          <Header onCardAdd={onCardAdd} />
-        </header>
+        <Header onCardAdd={onCardAdd} />
         {isLoading ? (
-          <p className="loading"> Загрузка...</p>
+          <Loading> Загрузка...</Loading>
         ) : (
-          <main className="main">
-            <MainContainer cards={cards} />
-          </main>
+          <MainContainer cards={cards} />
         )}
-      </div>
+      </Wrapper>
 
       <script src="js/script.js"></script>
     </>
