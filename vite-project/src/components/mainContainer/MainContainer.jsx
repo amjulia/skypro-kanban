@@ -1,5 +1,5 @@
 import Column from "../column/Column";
-import { MainPage } from "./MainContainer.styled";
+import { Container, MainBlock, MainContent, MainPage } from "./MainContainer.styled";
 
 
 const statusList = [
@@ -13,9 +13,9 @@ const statusList = [
 function MainContainer({ cards }) {
   return (
     <MainPage>
-      <div className="container">
-        <div className="main__block">
-          <div className="main__content">
+      <Container>
+        <MainBlock>
+          <MainContent>
             {statusList.map((status) => {
               return (
                 <Column
@@ -25,9 +25,9 @@ function MainContainer({ cards }) {
                 />
               );
             })}
-          </div>
-        </div>
-      </div>
+          </MainContent>
+        </MainBlock>
+      </Container>
     </MainPage>
   );
 }

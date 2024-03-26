@@ -51,12 +51,12 @@ body {
   background-color: #F1F1F1;
 } */
 
-.container {
+/* .container {
   max-width: 1260px;
   width: 100%;
   margin: 0 auto;
   padding: 0 30px;
-}
+} */
 
 /* ._hover01:hover {
   background-color: #33399b;
@@ -805,7 +805,7 @@ body {
   width: 100%;
   background-color: #EAEEF6;
 } */
-.main__block {
+/* .main__block {
   width: 100%;
   margin: 0 auto;
   padding: 25px 0 49px;
@@ -813,7 +813,7 @@ body {
 .main__content {
   width: 100%;
   display: flex;
-}
+} */
 .main__column {
   width: 20%;
   margin: 0 auto;
