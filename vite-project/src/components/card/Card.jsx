@@ -1,11 +1,14 @@
+
+import { CardTopic, TopicText } from "./Card.styled";
+
 function Card({ theme, title, date, style }) {
   return (
     <div className="cards__item">
       <div className="cards__card card">
         <div className="card__group">
-          <div className="card__theme">
-            <p className={style}>{theme}</p>
-          </div>
+          <CardTopic $topicColor={style}>
+            <TopicText>{theme}</TopicText>
+          </CardTopic>
           <a href="#popBrowse" target="_self">
             <div className="card__btn">
               <div></div>

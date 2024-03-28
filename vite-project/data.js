@@ -5,7 +5,7 @@ export const allCards = [
     title: "Название задачи",
     date: "30.10.23",
     status: "Без статуса",
-    style: "card__theme _orange"
+    style: "_orange"
     },
     {
     id: 2,
@@ -13,7 +13,7 @@ export const allCards = [
     title: "Название задачи",
     date: "30.10.23",
     status: "Без статуса",
-    style: "card__theme _green"
+    style: "_green"
     },
     {
     id: 3,
@@ -21,7 +21,7 @@ export const allCards = [
     title: "Название задачи",
     date: "30.10.23",
     status: "Без статуса",
-    style: "card__theme _orange"
+    style: "_orange"
     },
     {
     id: 4,
@@ -29,7 +29,7 @@ export const allCards = [
     title: "Название задачи",
     date: "30.10.23",
     status: "Без статуса",
-    style: "card__theme _purple"
+    style: "_purple"
     },
     {
     id: 5,
@@ -37,7 +37,7 @@ export const allCards = [
     title: "Название задачи",
     date: "30.10.23",
     status: "Без статуса",
-    style: "card__theme _orange"
+    style: "_orange"
     },
     { 
     id: 6,
@@ -45,7 +45,7 @@ export const allCards = [
     title: "Название задачи",
     date: "30.10.23",
     status: "Нужно сделать",
-    style: "card__theme _green"
+    style: "_green"
     },
     { 
     id: 7,
@@ -53,7 +53,7 @@ export const allCards = [
     title: "Название задачи",
     date: "30.10.23",
     status: "В работе",
-    style: "card__theme _green"
+    style: "_green"
     },
     { 
     id: 8,
@@ -61,7 +61,7 @@ export const allCards = [
     title: "Название задачи",
     date: "30.10.23",
     status: "В работе",
-    style: "card__theme _purple"
+    style: "_purple"
     },
     { 
     id: 9,
@@ -69,7 +69,7 @@ export const allCards = [
     title: "Название задачи",
     date: "30.10.23",
     status: "В работе",
-    style: "card__theme _orange"
+    style: "_orange"
     },
     { 
     id: 10,
@@ -77,7 +77,7 @@ export const allCards = [
     title: "Название задачи",
     date: "30.10.23",
     status: "Тестирование",
-    style: "card__theme _green"
+    style: "_green"
     },
     { 
     id: 11,
@@ -85,6 +85,6 @@ export const allCards = [
     title: "Название задачи",
     date: "30.10.23",
     status: "Готово",
-    style: "card__theme _green"
+    style: "_green"
     }
 ]
