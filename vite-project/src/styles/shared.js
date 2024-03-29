@@ -13,9 +13,9 @@ export const Hover02 = css`
 export const Hover03 = css`
   &:hover {
     background-color: #33399b;
-  color: #FFFFFF;
+    color: #ffffff;
   }
-`;
+  `;
 export const Container = styled.div`
   max-width: 1260px;
   width: 100%;

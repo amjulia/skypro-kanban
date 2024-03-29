@@ -63,6 +63,16 @@ export const CardsItem = styled.div`
   animation-name: card-animation;
   animation-duration: 500ms;
   animation-timing-function: linear;
+  @keyframes card-animation {
+    0% {
+      height: 0;
+      opacity: 0;
+    }
+    100% {
+      height: auto;
+      opacity: 1;
+    }
+  }
 `;
 
 export const CardTitle = styled.h3`

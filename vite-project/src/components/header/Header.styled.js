@@ -39,7 +39,10 @@ export const Button = styled.button`
   line-height: 1;
   font-weight: 500;
   margin-right: 20px;
-  ${Hover01}
+  ${Hover01};
+  & a {
+  color: #FFFFFF;
+} 
 
 `;
 export const HeaderUser = styled.a`
