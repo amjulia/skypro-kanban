@@ -35,13 +35,13 @@ ul li {
     opacity: 1;
   }
 }
-html,
+/* html,
 body {
   width: 100%;
   height: 100%;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   color: #000000;
-}
+} */
 
 /* .wrapper {
   max-width: 100%;
@@ -843,7 +843,7 @@ body {
   animation-duration: 500ms;
   animation-timing-function: linear;
 }
-.cards__card {
+/* .cards__card {
   width: 220px;
   height: 130px;
   background-color: #FFFFFF;
@@ -862,8 +862,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.card__theme {
+} */
+/* .card__theme {
   width: auto;
   height: 20px;
   padding: 5px 14px;
@@ -873,8 +873,8 @@ body {
   font-size: 10px;
   font-weight: 600;
   line-height: 10px;
-}
-.card__btn {
+} */
+/* .card__btn {
   width: 24px;
   height: 24px;
   display: flex;
@@ -887,22 +887,22 @@ body {
   height: 4px;
   border-radius: 50%;
   background-color: #94A6BE;
-}
-.card__title {
+} */
+/* .card__title {
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
   color: #000000;
   margin-bottom: 10px;
-}
-.card__content {
+} */
+/* .card__content {
   height: 64px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-}
-.card__date {
+} */
+/* .card__date {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -916,7 +916,7 @@ body {
   line-height: 13px;
   color: #94A6BE;
   letter-spacing: 0.2px;
-}
+} */
 
 @media screen and (max-width: 1200px) {
   .main__block {

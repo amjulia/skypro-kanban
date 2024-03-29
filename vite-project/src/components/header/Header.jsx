@@ -1,5 +1,6 @@
 import { useState } from "react";
 import * as S from "./Header.styled";
+import { Container } from "../../styles/shared";
 
 function Header({ onCardAdd }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,32 +8,30 @@ function Header({ onCardAdd }) {
 
   return (
     <S.Header>
-    <S.Container>
-      <S.Header__block>
-        <div className="header__logo _show _light">
-          <a href="" target="_self">
-            <img src="images/logo.png" alt="logo" />
-          </a>
-        </div>
-        <div className="header__logo _dark">
+    <Container>
+      <S.HeaderBlock>
+        <S.HeaderLogo>
+             <img src="images/logo.png" alt="logo" />
+        </S.HeaderLogo>
+        {/* <div className="header__logo _dark">
           <a href="" target="_self">
             <img src="images/logo_dark.png" alt="logo" />
           </a>
-        </div>
-        <S.Header__nav>
+        </div> */}
+        <S.HeaderNav>
           <S.Button
             id="btnMainNew"
             onClick={onCardAdd}
           >
             Создать новую задачу
           </S.Button>
-          <S.Header__user onClick={ToggleDropdown} >
+          <S.HeaderUser onClick={ToggleDropdown} >
             Ivan Ivanov
-          </S.Header__user>
+          </S.HeaderUser>
           {isOpen && (
             <S.HeaderPop
-              className="pop-user-set"
-              id="user-set-target"
+               className="pop-user-set"
+               id="user-set-target"
             >
               <S.PopUserSetName>Ivan Ivanov</S.PopUserSetName>
               <S.PopUserSetMail>ivan.ivanov@gmail.com</S.PopUserSetMail>
@@ -45,9 +44,9 @@ function Header({ onCardAdd }) {
               </S.ButtonExit>
             </S.HeaderPop>
           )}
-        </S.Header__nav>
-      </S.Header__block>
-    </S.Container>
+        </S.HeaderNav>
+      </S.HeaderBlock>
+    </Container>
     </S.Header>
   );
 }

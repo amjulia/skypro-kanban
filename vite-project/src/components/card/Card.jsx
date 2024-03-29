@@ -1,27 +1,27 @@
 
-import { CardTopic, TopicText } from "./Card.styled";
+import { CardBtn, CardContent, CardDate, CardGroup, CardTitle, CardTopic, Cards, CardsItem, TopicText } from "./Card.styled";
 
 function Card({ theme, title, date, style }) {
   return (
-    <div className="cards__item">
-      <div className="cards__card card">
-        <div className="card__group">
+    <CardsItem>
+      <Cards>
+        <CardGroup>
           <CardTopic $topicColor={style}>
             <TopicText>{theme}</TopicText>
           </CardTopic>
           <a href="#popBrowse" target="_self">
-            <div className="card__btn">
+            <CardBtn>
               <div></div>
               <div></div>
               <div></div>
-            </div>
+            </CardBtn>
           </a>
-        </div>
-        <div className="card__content">
+        </CardGroup>
+        <CardContent>
           <a href="" target="_blank">
-            <h3 className="card__title">{title}</h3>
+            <CardTitle>{title}</CardTitle>
           </a>
-          <div className="card__date">
+          <CardDate>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="13"
@@ -51,10 +51,10 @@ function Card({ theme, title, date, style }) {
               </defs>
             </svg>
             <p>{date}</p>
-          </div>
-        </div>
-      </div>
-    </div>
+          </CardDate>
+        </CardContent>
+      </Cards>
+    </CardsItem>
   );
 }
 export default Card;

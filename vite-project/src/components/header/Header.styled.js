@@ -1,16 +1,12 @@
 import styled from "styled-components";
+import { Hover01, Hover02, Hover03 } from "../../styles/shared";
 export const Header = styled.header`
   width: 100%;
   margin: 0 auto;
   background-color: #ffffff;
 `;
-export const Container = styled.div`
-  max-width: 1260px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 30px;
-`;
-export const Header__block = styled.div`
+
+export const HeaderBlock = styled.div`
   height: 70px;
   display: flex;
   flex-wrap: nowrap;
@@ -21,10 +17,11 @@ export const Header__block = styled.div`
   left: 0;
   padding: 0 10px;
 `;
-export const Header__logo = styled.div`
+export const HeaderLogo = styled.div`
   width: 85px;
+ & img {width: 85px;}
 `;
-export const Header__nav = styled.nav`
+export const HeaderNav = styled.nav`
   max-width: 290px;
   padding: 0;
   display: flex;
@@ -42,12 +39,10 @@ export const Button = styled.button`
   line-height: 1;
   font-weight: 500;
   margin-right: 20px;
+  ${Hover01}
 
-  &:hover {
-    background-color: #33399b;
-  }
 `;
-export const Header__user = styled.a`
+export const HeaderUser = styled.a`
   height: 20px;
   display: flex;
   flex-wrap: nowrap;
@@ -56,10 +51,8 @@ export const Header__user = styled.a`
   font-size: 14px;
   line-height: 20px;
   color: #565eef;
+  ${Hover02}
 
-  &:hover {
-    color: #33399b;
-  }
   &::after {
     content: "";
     display: block;
@@ -92,6 +85,7 @@ export const HeaderPop = styled.div`
   text-align: center;
   z-index: 2;
 `;
+
 
 export const PopUserSetName = styled.p`
   color: #000;
@@ -148,10 +142,8 @@ export const PopUserSetThemeInput = styled.input`
 `;
 
 export const ButtonExit = styled.button`
-  &:hover {
-    background-color: #33399b;
-    color: #ffffff;
-  }
+  ${Hover03}
+  
   &:hover a {
     color: #ffffff;
   }
