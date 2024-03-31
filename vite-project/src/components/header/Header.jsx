@@ -29,10 +29,7 @@ function Header({ onCardAdd }) {
             Ivan Ivanov
           </S.HeaderUser>
           {isOpen && (
-            <S.HeaderPop
-               className="pop-user-set"
-               id="user-set-target"
-            >
+            <S.HeaderPop>
               <S.PopUserSetName>Ivan Ivanov</S.PopUserSetName>
               <S.PopUserSetMail>ivan.ivanov@gmail.com</S.PopUserSetMail>
               <S.PopUserSetTheme>

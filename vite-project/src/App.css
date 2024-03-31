@@ -426,9 +426,9 @@ body {
   line-height: 25px;
   font-weight: 600;
 }
-.calendar__content {
+/* .calendar__content {
   margin-bottom: 12px;
-}
+} */
 .calendar__days-names {
   display: flex;
   flex-wrap: nowrap;
@@ -437,13 +437,13 @@ body {
   margin: 7px 0;
   padding: 0 7px;
 }
-.calendar__day-name {
+/* .calendar__day-name {
   color: #94A6BE;
   font-size: 10px;
   font-weight: 500;
   line-height: normal;
   letter-spacing: -0.2px;
-}
+} */
 .calendar__cells {
   width: 182px;
   height: 126px;
@@ -977,9 +977,9 @@ body {
   .calendar__p {
     font-size: 14px;
   }
-  .calendar__day-name {
+  /* .calendar__day-name {
     font-size: 14px;
-  }
+  } */
   .calendar__cells {
     width: 344px;
     height: auto;
