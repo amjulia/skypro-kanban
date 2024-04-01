@@ -1,16 +1,18 @@
+import { CalendarCell, CalendarCells, CalendarContent, CalendarDayName, CalendarDaysNames } from "./Calendar.styled";
+
 function Calendar() {
-    return <div className="calendar__content">
-    <div className="calendar__days-names">
-        <div className="calendar__day-name">пн</div>
-        <div className="calendar__day-name">вт</div>
-        <div className="calendar__day-name">ср</div>
-        <div className="calendar__day-name">чт</div>
-        <div className="calendar__day-name">пт</div>
-        <div className="calendar__day-name -weekend-">сб</div>
-        <div className="calendar__day-name -weekend-">вс</div>
-    </div>
-    <div className="calendar__cells">
-        <div className="calendar__cell _other-month">28</div>
+    return <CalendarContent>
+    <CalendarDaysNames>
+        <CalendarDayName>пн</CalendarDayName>
+        <CalendarDayName>вт</CalendarDayName>
+        <CalendarDayName>ср</CalendarDayName>
+        <CalendarDayName>чт</CalendarDayName>
+        <CalendarDayName>пт</CalendarDayName>
+        <CalendarDayName>сб</CalendarDayName>
+        <CalendarDayName>вс</CalendarDayName>
+    </CalendarDaysNames>
+    <CalendarCells>
+        <CalendarCell>28</CalendarCell>
         <div className="calendar__cell _other-month">29</div>
         <div className="calendar__cell _other-month">30</div>
         <div className="calendar__cell _cell-day">31</div>
@@ -45,7 +47,7 @@ function Calendar() {
         <div className="calendar__cell _cell-day">29</div>
         <div className="calendar__cell _cell-day _weekend">30</div>
         <div className="calendar__cell _other-month _weekend">1</div>
-    </div>
-</div>
+    </CalendarCells>
+</CalendarContent>
 }
 export default Calendar;

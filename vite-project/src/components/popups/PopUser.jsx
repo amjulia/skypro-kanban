@@ -1,16 +1,26 @@
+import { ButtonPopExitNo, ButtonPopExitYes, PopExit, PopExitBlock, PopExitContainer, PopExitFormGroup, PopExitTtl } from "./PopUser.styled";
+
 function PopUser() {
-    return <div className="pop-exit__container">
-    <div className="pop-exit__block">
-        <div className="pop-exit__ttl">
+  return (
+    <PopExit id="popExit">
+      <PopExitContainer>
+        <PopExitBlock>
+          <PopExitTtl>
             <h2>Выйти из аккаунта?</h2>
-        </div>
-        <form className="pop-exit__form" id="formExit" action="#">
-            <div className="pop-exit__form-group">
-                <button className="pop-exit__exit-yes _hover01" id="exitYes"><a href="modal/signin.html">Да, выйти</a> </button>
-                <button className="pop-exit__exit-no _hover03" id="exitNo"><a href="main.html">Нет, остаться</a> </button>
-            </div>
-        </form>
-    </div>
-</div>
+          </PopExitTtl>
+          <form  id="formExit" action="#">
+            <PopExitFormGroup>
+              <ButtonPopExitYes id="exitYes">
+                <a href="modal/signin.html">Да, выйти</a>{" "}
+              </ButtonPopExitYes>
+              <ButtonPopExitNo id="exitNo">
+                <a href="main.html">Нет, остаться</a>{" "}
+              </ButtonPopExitNo>
+            </PopExitFormGroup>
+          </form>
+        </PopExitBlock>
+      </PopExitContainer>
+    </PopExit>
+  );
 }
 export default PopUser;
