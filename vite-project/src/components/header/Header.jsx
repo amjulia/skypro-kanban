@@ -1,29 +1,26 @@
 import { useState } from "react";
 import * as S from "./Header.styled";
 import { Container } from "../../styles/shared";
+import { Link } from "react-router-dom";
+import { routeObj } from "../../lib/const";
 
-function Header({ onCardAdd }) {
+function Header({onCardAdd}) {
   const [isOpen, setIsOpen] = useState(false);
   const ToggleDropdown = () => setIsOpen((prevState) => !prevState);
 
-  return (
+    return (
     <S.Header>
     <Container>
       <S.HeaderBlock>
         <S.HeaderLogo>
-             <img src="images/logo.png" alt="logo" />
+             <Link to="/"><img src="images/logo.png" alt="logo" /> </Link>
         </S.HeaderLogo>
-        {/* <div className="header__logo _dark">
-          <a href="" target="_self">
-            <img src="images/logo_dark.png" alt="logo" />
-          </a>
-        </div> */}
-        <S.HeaderNav>
+             <S.HeaderNav>
           <S.Button
             id="btnMainNew"
             onClick={onCardAdd}
           >
-            Создать новую задачу
+            <a href="#popNewCard">Создать новую задачу</a>
           </S.Button>
           <S.HeaderUser onClick={ToggleDropdown} >
             Ivan Ivanov
@@ -36,8 +33,8 @@ function Header({ onCardAdd }) {
                 <S.PopUserSetThemeP>Темная тема</S.PopUserSetThemeP>
                 <S.PopUserSetThemeInput type="checkbox" name="checkbox" />
               </S.PopUserSetTheme>
-              <S.ButtonExit >
-                <a href="#popExit">Выйти</a>
+              <S.ButtonExit>
+                <Link to={routeObj.EXIT}>Выйти</Link>
               </S.ButtonExit>
             </S.HeaderPop>
           )}

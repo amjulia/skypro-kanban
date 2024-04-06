@@ -1,7 +1,17 @@
+import { Link } from "react-router-dom";
+import {
+  CardBtn,
+  CardContent,
+  CardDate,
+  CardGroup,
+  CardTitle,
+  CardTopic,
+  Cards,
+  CardsItem,
+  TopicText,
+} from "./Card.styled";
 
-import { CardBtn, CardContent, CardDate, CardGroup, CardTitle, CardTopic, Cards, CardsItem, TopicText } from "./Card.styled";
-
-function Card({ theme, title, date, style }) {
+function Card({ theme, title, date, id, style }) {
   return (
     <CardsItem>
       <Cards>
@@ -9,13 +19,14 @@ function Card({ theme, title, date, style }) {
           <CardTopic $topicColor={style}>
             <TopicText>{theme}</TopicText>
           </CardTopic>
-          <a href="#popBrowse" target="_self">
+
+          <Link to={`/card/${id}`}>
             <CardBtn>
               <div></div>
               <div></div>
               <div></div>
             </CardBtn>
-          </a>
+          </Link>
         </CardGroup>
         <CardContent>
           <a href="" target="_blank">

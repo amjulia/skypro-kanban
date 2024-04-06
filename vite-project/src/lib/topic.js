@@ -16,3 +16,4 @@ export const TopicStyles = {
         color: "#ffffff",
       }
 }
+

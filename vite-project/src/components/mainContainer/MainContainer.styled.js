@@ -19,3 +19,13 @@ export const MainContent = styled.div`
   width: 100%;
   display: flex;
 `;
+export const Loading = styled.p`
+  width: 100%;
+  height: 100px;
+  background-color: #eaeef6;
+  margin: 0 auto;
+  padding: 0 30px;
+`;
+
+
+
