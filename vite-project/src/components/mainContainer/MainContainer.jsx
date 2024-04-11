@@ -60,10 +60,8 @@ function MainContainer({user}) {
       <Container>
         <MainBlock>
           <MainContent>
-          {error && (<p style={{color: "red"}}>Произошла ошибка!</p> ) }   
-            {isLoading ? (
-              <Loading> Загрузка...</Loading>
-            ) : (
+          {error ? (<p style={{color: "red"}}>Произошла ошибка, попробуйте позже!</p> ) :   
+           (isLoading ? (<Loading> Загрузка...</Loading>) : (
               <>
                 {statusList.map((status) => {
                   return (
@@ -74,9 +72,9 @@ function MainContainer({user}) {
                     />
                   );
                 })}
-              </>
-            )}
-             
+              </>)
+            )
+          }
           </MainContent>
         </MainBlock>
       </Container>
