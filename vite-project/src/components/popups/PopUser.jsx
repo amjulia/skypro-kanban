@@ -1,8 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ButtonPopExitNo, ButtonPopExitYes, PopExit, PopExitBlock, PopExitContainer, PopExitFormGroup, PopExitTtl } from "./PopUser.styled";
 import { routeObj } from "../../lib/const";
 
-function PopUser() {
+function PopUser({logout}) {
   
   return (
     <PopExit id="popExit">
@@ -13,7 +13,7 @@ function PopUser() {
           </PopExitTtl>
           <form  id="formExit" action="#">
             <PopExitFormGroup>
-              <ButtonPopExitYes >
+              <ButtonPopExitYes onClick={logout} >
               <Link to={routeObj.LOGIN}>Да, выйти</Link>
               </ButtonPopExitYes>
               <ButtonPopExitNo >

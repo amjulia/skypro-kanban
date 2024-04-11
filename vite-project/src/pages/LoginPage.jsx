@@ -1,9 +1,9 @@
 import React from 'react'
 import Login from '../components/auth/Login'
 
-const LoginPage = ({setIsAuth}) => {
+const LoginPage = ({userLogin}) => {
   return (
-   <Login setIsAuth={setIsAuth} />
+   <Login userLogin={userLogin} />
   )
 }
 

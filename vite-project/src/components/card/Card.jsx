@@ -10,17 +10,18 @@ import {
   CardsItem,
   TopicText,
 } from "./Card.styled";
+import { topicHeader } from "../../lib/topic";
 
-function Card({ theme, title, date, id, style }) {
+function Card({ theme, title, date, _id }) {
   return (
     <CardsItem>
       <Cards>
         <CardGroup>
-          <CardTopic $topicColor={style}>
+          <CardTopic $topicColor={topicHeader[theme]}>
             <TopicText>{theme}</TopicText>
           </CardTopic>
 
-          <Link to={`/card/${id}`}>
+          <Link to={`/card/${_id}`}>
             <CardBtn>
               <div></div>
               <div></div>

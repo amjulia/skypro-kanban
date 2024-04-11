@@ -11,6 +11,8 @@ import {
 } from "./MainContainer.styled";
 import { allCards } from "../../../data";
 import { Wrapper } from "../../styles/shared";
+import { getToDos } from "../../api";
+
 
 
 const statusList = [
@@ -21,33 +23,44 @@ const statusList = [
   "Готово",
 ];
 
-function MainContainer() {
-   const [cards, setCards] = useState(allCards);
+function MainContainer({user}) {
+   const [cards, setCards] = useState([]);
   const onCardAdd = () => {
     const newCard = {
-      id: cards.length + 1,
-      theme: "Новая задача",
+      _id: cards.length + 1,
+      topic: "Copywriting",
       title: "Новая задача",
       date: "30.10.23",
       status: "Без статуса",
-      style: "card__theme _orange",
     };
     setCards([...cards, newCard]);
   };
   
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);  
+  
+
   useEffect(() => {
-    setTimeout(() => {
+    getToDos({token: user.token}).then((cards) => {
+      console.log(cards)
+      setCards(cards.tasks)
       setIsLoading(false);
-    }, 2000);
-  }, []);
+    }).catch((err)=>{setError(err.message)})
+    .finally(()=> {
+      setIsLoading(false);
+    })
+
+  }, [user])
+
+  
   return (
     <Wrapper>
     <MainPage>
-      <Header onCardAdd={onCardAdd} />
+      <Header onCardAdd={onCardAdd}  user={user.name}/>
       <Container>
         <MainBlock>
           <MainContent>
+          {error && (<p style={{color: "red"}}>Произошла ошибка!</p> ) }   
             {isLoading ? (
               <Loading> Загрузка...</Loading>
             ) : (
@@ -63,6 +76,7 @@ function MainContainer() {
                 })}
               </>
             )}
+             
           </MainContent>
         </MainBlock>
       </Container>

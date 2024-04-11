@@ -4,7 +4,7 @@ import { Container } from "../../styles/shared";
 import { Link } from "react-router-dom";
 import { routeObj } from "../../lib/const";
 
-function Header({onCardAdd}) {
+function Header({onCardAdd, user}) {
   const [isOpen, setIsOpen] = useState(false);
   const ToggleDropdown = () => setIsOpen((prevState) => !prevState);
 
@@ -23,11 +23,11 @@ function Header({onCardAdd}) {
             <a href="#popNewCard">Создать новую задачу</a>
           </S.Button>
           <S.HeaderUser onClick={ToggleDropdown} >
-            Ivan Ivanov
+            {user}
           </S.HeaderUser>
           {isOpen && (
             <S.HeaderPop>
-              <S.PopUserSetName>Ivan Ivanov</S.PopUserSetName>
+              <S.PopUserSetName>{user}</S.PopUserSetName>
               <S.PopUserSetMail>ivan.ivanov@gmail.com</S.PopUserSetMail>
               <S.PopUserSetTheme>
                 <S.PopUserSetThemeP>Темная тема</S.PopUserSetThemeP>

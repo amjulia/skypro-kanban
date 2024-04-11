@@ -3,6 +3,7 @@ import { ColumnTitle, MainColumn } from "./Column.styled";
 
 
 function Column({ title, allCards }) {
+
   return (
     <MainColumn>
       <ColumnTitle>
@@ -11,11 +12,10 @@ function Column({ title, allCards }) {
       {allCards.map((card) => (
         <Card
           title={card.title}
-          theme={card.theme}
+          theme={card.topic}
           date={card.date}
-          style={card.style}
-          id={card.id}
-          key={card.id}
+          id={card._id}
+          key={card._id}
         />
       ))}
     </MainColumn>
