@@ -1,6 +1,9 @@
+import { Link } from "react-router-dom";
 import { ButtonPopExitNo, ButtonPopExitYes, PopExit, PopExitBlock, PopExitContainer, PopExitFormGroup, PopExitTtl } from "./PopUser.styled";
+import { routeObj } from "../../lib/const";
 
-function PopUser() {
+function PopUser({logout}) {
+  
   return (
     <PopExit id="popExit">
       <PopExitContainer>
@@ -10,12 +13,12 @@ function PopUser() {
           </PopExitTtl>
           <form  id="formExit" action="#">
             <PopExitFormGroup>
-              <ButtonPopExitYes id="exitYes">
-                <a href="modal/signin.html">Да, выйти</a>{" "}
+              <ButtonPopExitYes onClick={logout} >
+              <Link to={routeObj.LOGIN}>Да, выйти</Link>
               </ButtonPopExitYes>
-              <ButtonPopExitNo id="exitNo">
-                <a href="main.html">Нет, остаться</a>{" "}
-              </ButtonPopExitNo>
+              <ButtonPopExitNo >
+              <Link to={routeObj.MAIN}>Нет, остаться </Link>
+              </ButtonPopExitNo >
             </PopExitFormGroup>
           </form>
         </PopExitBlock>

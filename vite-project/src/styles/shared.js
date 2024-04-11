@@ -36,3 +36,11 @@ export const ActiveDay = css`
   background-color: #94A6BE;
   color: #FFFFFF;
 `;
+
+export const Wrapper = styled.div`
+max-width: 100%;
+width: 100vw;
+min-height: 100vh;
+overflow: hidden;
+background-color: #f1f1f1;
+`;

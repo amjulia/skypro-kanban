@@ -1,7 +1,7 @@
 export const allCards = [
     {
     id: 1,
-    theme: "Web Design",
+    theme: "Web Design", //topic
     title: "Название задачи",
     date: "30.10.23",
     status: "Без статуса",

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Hover01, Hover03 } from "../../styles/shared";
 
 export const PopExit = styled.div`
-  display: none;
+   display: block;
   width: 100%;
   height: 100%;
   min-width: 320px;
@@ -11,9 +11,7 @@ export const PopExit = styled.div`
   top: 0;
   left: 0;
   z-index: 5;
-  &:target {
-    display: block;
-  }
+ 
 `;
 export const PopExitContainer = styled.div`
   width: 100%;
@@ -95,7 +93,7 @@ export const ButtonPopExitNo = styled.button`
   line-height: 21px;
   font-weight: 500;
   letter-spacing: -0.14px;
-  color: #ffffff;
+  color: #565EEF;;
   ${Hover03};
   &:hover a {
   color: #FFFFFF;
