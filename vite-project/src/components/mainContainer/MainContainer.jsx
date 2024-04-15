@@ -9,7 +9,6 @@ import {
   MainPage,
   
 } from "./MainContainer.styled";
-import { allCards } from "../../../data";
 import { Wrapper } from "../../styles/shared";
 import { getToDos } from "../../api";
 
