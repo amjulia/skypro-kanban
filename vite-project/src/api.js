@@ -12,6 +12,18 @@ export async function getToDos({token}) {
   const data = await response.json();
   return data;
 }
+export async function postToDo(text) {
+  const response = await fetch("https://wedev-api.sky.pro/api/kanban", {
+    method: "POST",
+    body: JSON.stringify({
+      text,
+    }),
+
+  });
+  if (!response.ok) {
+    throw new Error("Ошибка сервера");
+  }
+}
 
 export async function authToDos(name, login, password) {
   const response = await fetch("https://wedev-api.sky.pro/api/user", {
@@ -22,11 +34,13 @@ export async function authToDos(name, login, password) {
       password,
     }),
   });
+  
   if (response.status === 500) {
     throw new Error("Ошибка сервера");
   }
   if (response.status === 400 ) {
-    throw new Error("Пользователь с таким логинои уже зарегистрирован")
+    throw new Error("Пользователь с таким логином уже зарегистрирован")
+    
   }
   const data = await response.json();
   return data;

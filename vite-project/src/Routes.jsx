@@ -8,6 +8,8 @@ import ExitPage from "./pages/ExitPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import NewCardPage from "./pages/NewCardPage";
+
 function checkLS() {
   try {
     const user = JSON.parse(localStorage.getItem("user"))
@@ -20,6 +22,7 @@ function checkLS() {
 const AppRoutes = () => {
   //const [isAuth, setIsAuth] = useState(false)
   // const [isAuth, setIsAuth] = useState(localStorage.getItem)
+  
   const [user, setUser] = useState(checkLS());
   const navigate = useNavigate();
   function userLogin(newUser) {
@@ -41,6 +44,8 @@ function logout() {
           <Route path={routeObj.MAIN} element={<MainPage user={user} />}>
             <Route path={routeObj.CARD} element={<CardPage />} />
             <Route path={routeObj.EXIT} element={<ExitPage logout={logout} />}  />
+            <Route path={routeObj.NEWCARD} element={<NewCardPage />}  />
+
           </Route>
         </Route>
         

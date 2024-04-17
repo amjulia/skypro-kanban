@@ -18,7 +18,9 @@ function Registration({userLogin}) {
     try {
     await authToDos(name, login, password).then((responseData) => {
       userLogin(responseData.user);
-    })} catch(err) {setError(err.message)}
+    })
+  } catch(err) {setError(err.message)}
+    
   };
 
   return (
@@ -54,7 +56,7 @@ function Registration({userLogin}) {
                 
               </S.ModalBtnEnter>
               <S.ModalFormGroup>
-              {error && (<p style={{color: "red"}}>Пользователь с таким логином уже существует</p> ) } 
+              {error && (<p style={{color: "red"}}>{error}</p> ) } 
                 <p>
                   Уже есть аккаунт?{" "}
                   <Link to={routeObj.LOGIN} error="error">Войдите здесь</Link>
