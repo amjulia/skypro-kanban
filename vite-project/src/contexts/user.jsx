@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 import { routeObj } from "../lib/const";
 import { useNavigate } from "react-router-dom";
 
@@ -15,7 +15,7 @@ function checkLS() {
 export const UserContext = createContext(null);
 
 
-export function userProvider({children}) {
+export function UserProvider({children}) {
   
   const [user, setUser] = useState(checkLS());
   const navigate = useNavigate();
@@ -40,12 +40,3 @@ return(
 
 }
 
-
-
-export function useUserContext() {
-  const user = useContext(UserContext);
-  if (!user) {
-    throw new Error("Данные пользователя не были найдены");
-  }
-  return user;
-}

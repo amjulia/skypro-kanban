@@ -1,8 +1,7 @@
-import React from "react";
 import PopUser from "../components/popups/PopUser";
 
-const ExitPage = ({logout}) => {
-  return <PopUser logout={logout} />;
+const ExitPage = () => {
+  return <PopUser />;
 };
 
 export default ExitPage;

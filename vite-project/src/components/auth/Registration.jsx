@@ -4,8 +4,10 @@ import * as S from "./Login.styled";
 import { Wrapper } from "../../styles/shared";
 import { authToDos } from "../../api";
 import { useState } from "react";
+import { useUserContext } from "../../contexts/hooks/useUser";
 
-function Registration({userLogin}) {
+function Registration() {
+  const {userLogin} = useUserContext();
   const [name, setName] = useState("");
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");

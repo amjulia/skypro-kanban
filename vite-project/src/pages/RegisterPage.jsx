@@ -1,9 +1,9 @@
 import React from 'react'
 import Registration from '../components/auth/Registration'
 
-const RegisterPage = ({userLogin}) => {
+const RegisterPage = () => {
   return (
-    <Registration userLogin={userLogin} />
+    <Registration />
 
   )
 }

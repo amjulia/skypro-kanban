@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { Hover01 } from "../../styles/shared";
+import { TopicStyles } from "../../lib/topic";
+import { TopicText } from "../card/Card.styled";
 export const PopNewCard = styled.div`
   width: 100%;
   min-width: 375px;
@@ -160,9 +162,16 @@ export const CategoriesThemes = styled.div`
   flex-wrap: nowrap;
   align-items: flex-start;
   justify-content: flex-start;
+  input[type=radio] {
+	display: none;
+}
 `;
 
-export const CategoriesThemeOrange = styled.div`
+
+export const CategoriesTheme = styled.label`
+  &:hover {
+    opacity: 1 !important;
+  }
   display: inline-block;
   width: auto;
   height: 30px;
@@ -170,49 +179,14 @@ export const CategoriesThemeOrange = styled.div`
   border-radius: 24px;
   margin-right: 7px;
   opacity: 0.4;
-  background-color: #ffe4c2;
-  color: #ff6d00;
-  opacity: 1 !important;
-  p {
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 14px;
-    white-space: nowrap;
-  }
-`;
-export const CategoriesThemeGreen = styled.div`
-  display: inline-block;
-  width: auto;
-  height: 30px;
-  padding: 8px 20px;
-  border-radius: 24px;
-  margin-right: 7px;
-  opacity: 0.4;
-  background-color: #B4FDD1;
-  color: #06B16E;
-  p {
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 14px;
-    white-space: nowrap;
-  }
-`;
-export const CategoriesThemePurple = styled.div`
-  display: inline-block;
-  width: auto;
-  height: 30px;
-  padding: 8px 20px;
-  border-radius: 24px;
-  margin-right: 7px;
-  opacity: 0.4;
-  background-color: #E9D4FF;
-  color: #9A48F1;
-  p {
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 14px;
-    white-space: nowrap;
-  }
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 14px;
+  white-space: nowrap;
+    color: ${({ $topicColor }) => TopicStyles[$topicColor]?.color || "#06b16e"};
+  background-color: ${({ $topicColor }) =>
+    TopicStyles[$topicColor]?.backgroundColor || "#b4fdd1"};
+
 `;
 export const FormNewCreate = styled.button`
   width: 132px;
@@ -241,3 +215,4 @@ export const Purple = styled.p`
  background-color: #E9D4FF;
   color: #9A48F1;
 `;
+
