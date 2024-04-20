@@ -35,7 +35,7 @@ function MainContainer() {
 
   useEffect(() => {
     getToDos({token: user.token}).then((cards) => {
-      console.log(cards)
+      console.log(cards.tasks.id)
       setCards(cards.tasks)
       setIsLoading(false);
     }).catch((err)=>{setError(err.message)})

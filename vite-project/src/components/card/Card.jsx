@@ -12,7 +12,7 @@ import {
 } from "./Card.styled";
 import { topicHeader } from "../../lib/topic";
 
-function Card({ theme, title, date, _id }) {
+function Card({ theme, title, date, id }) {
   return (
     <CardsItem>
       <Cards>
@@ -21,7 +21,7 @@ function Card({ theme, title, date, _id }) {
             <TopicText>{theme}</TopicText>
           </CardTopic>
 
-          <Link to={`/card/${_id}`}>
+          <Link to={`/card/${id}`}>
             <CardBtn>
               <div></div>
               <div></div>

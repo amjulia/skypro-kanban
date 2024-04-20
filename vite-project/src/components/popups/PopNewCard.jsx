@@ -30,7 +30,7 @@ function PopNewCard() {
           
              navigate(-1);
       })
-      .catch((err) => {setError(err.message)}); // прописать ошибки как в авторизации!!!
+      .catch((err) => {setError(err.message)});
   };
 
   return (
