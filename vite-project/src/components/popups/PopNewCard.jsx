@@ -20,6 +20,11 @@ function PopNewCard() {
   const { user } = useUserContext();
   const {setCards} = useTaskContext();
   
+  const handleInputChange = (e) => {
+    const {name, value} = e.target;
+    setNewTask({ ...newTask, [name]:value })
+  }
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
     const taskData = { ...newTask, date: selected };
@@ -48,11 +53,9 @@ function PopNewCard() {
                 <S.FormNewBlock>
                   <S.SubTtl htmlFor="formTitle">Название задачи</S.SubTtl>
                   <S.FormNewInput
-                    onChange={(e) =>
-                      setNewTask({ ...newTask, title: e.target.value })
-                    }
+                    onChange={handleInputChange}
                     type="text"
-                    name="name"
+                    name="title"
                     placeholder="Введите название задачи..."
                     autoFocus
                   />
@@ -60,10 +63,8 @@ function PopNewCard() {
                 <S.FormNewBlock>
                   <S.SubTtl htmlFor="textArea">Описание задачи</S.SubTtl>
                   <S.FormNewArea
-                    onChange={(e) =>
-                      setNewTask({ ...newTask, description: e.target.value })
-                    }
-                    name="text"
+                    onChange={handleInputChange}
+                    name="description"
                     placeholder="Введите описание задачи..."
                   ></S.FormNewArea>
                 </S.FormNewBlock>
@@ -80,11 +81,10 @@ function PopNewCard() {
                 >
                   Web Design{" "}
                   <input
-                    onChange={(e) =>
-                      setNewTask({ ...newTask, topic: e.target.value })
-                    }
+                    onChange={handleInputChange}
                     type="radio"
                     id="radio1"
+                    name="topic"
                     value="Web Design"
                   />
                 </S.CategoriesTheme>
@@ -92,22 +92,21 @@ function PopNewCard() {
                 <S.CategoriesTheme htmlFor="radio2" $topicColor={topicHeader["Research"]}>
                   Research
                   <input
-                    onChange={(e) =>
-                      setNewTask({ ...newTask, topic: e.target.value })
-                    }
+                    onChange={handleInputChange}
+                      
                     type="radio"
                     id="radio2"
+                    name="topic"
                     value="Research"
                   />
                 </S.CategoriesTheme>
                 <S.CategoriesTheme htmlFor="radio3" $topicColor={topicHeader["Copywriting"]}>
                   Copywriting
                   <input
-                    onChange={(e) =>
-                      setNewTask({ ...newTask, topic: e.target.value })
-                    }
+                    onChange={handleInputChange}
                     type="radio"
                     id="radio3"
+                    name="topic"
                     value="Copywriting"
                   />
                 </S.CategoriesTheme>
