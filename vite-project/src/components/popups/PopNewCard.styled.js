@@ -169,9 +169,6 @@ export const CategoriesThemes = styled.div`
 
 
 export const CategoriesTheme = styled.label`
-  &:hover {
-    opacity: 1 !important;
-  }
   display: inline-block;
   width: auto;
   height: 30px;
