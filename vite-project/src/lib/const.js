@@ -4,5 +4,6 @@ export const routeObj = {
     EXIT: "/exit",
     LOGIN: "/login",
     REGISTER: "/register",
+    NEWCARD: "/newCard",
     NOT_FOUND: "*",
   };

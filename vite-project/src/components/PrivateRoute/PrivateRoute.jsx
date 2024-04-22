@@ -1,8 +1,9 @@
-import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import { routeObj } from "../../lib/const";
+import { useUserContext } from "../../contexts/hooks/useUser";
 
-function PrivateRoute({user}) {
+function PrivateRoute() {
+  const {user} = useUserContext();
   return user ? <Outlet /> : <Navigate to={routeObj.LOGIN} />;
 }
 

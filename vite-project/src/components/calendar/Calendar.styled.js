@@ -1,6 +1,13 @@
 import styled from "styled-components";
 import { OtherMonth } from "../../styles/shared";
-
+export const Calendar = styled.div`
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1px;
+  color: #94a6be;
+  letter-spacing: -0.14px;
+`;
 export const CalendarContent = styled.div`
   margin-bottom: 12px;
 `;
@@ -41,3 +48,6 @@ export const CalendarCell = styled.div`
   letter-spacing: -0.2px;
   cursor: pointer;
   ${OtherMonth}`
+
+export const CategoriesP = styled.div`
+margin-bottom: 14px;`

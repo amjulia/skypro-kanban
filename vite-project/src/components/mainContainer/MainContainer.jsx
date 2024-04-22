@@ -11,6 +11,8 @@ import {
 } from "./MainContainer.styled";
 import { Wrapper } from "../../styles/shared";
 import { getToDos } from "../../api";
+import { useUserContext } from "../../contexts/hooks/useUser";
+import { useTaskContext } from "../../contexts/hooks/useTask";
 
 
 
@@ -22,27 +24,18 @@ const statusList = [
   "Готово",
 ];
 
-function MainContainer({user}) {
-   const [cards, setCards] = useState([]);
-  const onCardAdd = () => {
-    const newCard = {
-      _id: cards.length + 1,
-      topic: "Copywriting",
-      title: "Новая задача",
-      date: "30.10.23",
-      status: "Без статуса",
-    };
-    setCards([...cards, newCard]);
-  };
-  
+function MainContainer() {
+  const {user} = useUserContext();
+   const {cards} = useTaskContext();
+   const {setCards} = useTaskContext();
+ 
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);  
   
 
   useEffect(() => {
     getToDos({token: user.token}).then((cards) => {
-      console.log(cards)
-      setCards(cards.tasks)
+       setCards(cards.tasks)
       setIsLoading(false);
     }).catch((err)=>{setError(err.message)})
     .finally(()=> {
@@ -55,7 +48,7 @@ function MainContainer({user}) {
   return (
     <Wrapper>
     <MainPage>
-      <Header onCardAdd={onCardAdd}  user={user.name}/>
+      <Header user={user.name}/>
       <Container>
         <MainBlock>
           <MainContent>

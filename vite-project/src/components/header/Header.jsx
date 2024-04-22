@@ -17,10 +17,10 @@ function Header({onCardAdd, user}) {
         </S.HeaderLogo>
              <S.HeaderNav>
           <S.Button
-            id="btnMainNew"
+            
             onClick={onCardAdd}
           >
-            <a href="#popNewCard">Создать новую задачу</a>
+            <Link to={routeObj.NEWCARD}>Создать новую задачу</Link>
           </S.Button>
           <S.HeaderUser onClick={ToggleDropdown} >
             {user}

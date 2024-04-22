@@ -1,9 +1,9 @@
-import React from 'react'
+
 import Login from '../components/auth/Login'
 
-const LoginPage = ({userLogin}) => {
+const LoginPage = () => {
   return (
-   <Login userLogin={userLogin} />
+   <Login />
   )
 }
 
