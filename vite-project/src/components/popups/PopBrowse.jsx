@@ -1,9 +1,28 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import Calendar from "../calendar/Calendar";
 import { routeObj } from "../../lib/const";
+import { useUserContext } from "../../contexts/hooks/useUser";
+import { useTaskContext } from "../../contexts/hooks/useTask";
+import { deleteTodo } from "../../api";
+import { useState } from "react";
 
 function PopBrowse() {
   const {id} = useParams();
+  const {user} = useUserContext();
+  const {cards, setCards} = useTaskContext();
+  const card = cards.find((item) => item._id === id);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
+  function deleteTask() {
+    deleteTodo({token:user.token, id}).
+    then((responseData) => {
+      setCards(responseData.tasks);
+      navigate(routeObj.MAIN);
+    }).catch((err) => {
+      setError(err.message);
+    });
+  }
   
   return (
     <div className="pop-browse" id="popBrowse">
@@ -70,7 +89,7 @@ function PopBrowse() {
                 <button className="btn-browse__edit _btn-bor _hover03">
                   <a href="#">Редактировать задачу</a>
                 </button>
-                <button className="btn-browse__delete _btn-bor _hover03">
+                <button className="btn-browse__delete _btn-bor _hover03" onClick={deleteTask}>
                   <a href="#">Удалить задачу</a>
                 </button>
               </div>
