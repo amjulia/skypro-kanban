@@ -1,29 +1,45 @@
-import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Calendar from "../calendar/Calendar";
 import { routeObj } from "../../lib/const";
 import { useUserContext } from "../../contexts/hooks/useUser";
 import { useTaskContext } from "../../contexts/hooks/useTask";
 import { deleteTodo } from "../../api";
 import { useState } from "react";
+import { status, topicHeader } from "../../lib/topic";
+import * as S from "../popups/PopBrowse.styled"
 
 function PopBrowse() {
-  const {id} = useParams();
-  const {user} = useUserContext();
-  const {cards, setCards} = useTaskContext();
+  const { id } = useParams();
+  const { user } = useUserContext();
+  const { cards, setCards } = useTaskContext();
   const card = cards.find((item) => item._id === id);
   const [error, setError] = useState(null);
+  const [selected, setSelected] = useState();
   const navigate = useNavigate();
 
+  const [editTask, setEditTask] = useState({
+    title: card.title,
+    description: card.description,
+    topic: card.topic,
+    data: card.data,
+    status: card.status,
+  });
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setEditTask({ ...editTask, [name]: value });
+  };
+
   function deleteTask() {
-    deleteTodo({token:user.token, id}).
-    then((responseData) => {
-      setCards(responseData.tasks);
-      navigate(routeObj.MAIN);
-    }).catch((err) => {
-      setError(err.message);
-    });
+    deleteTodo({ token: user.token, id })
+      .then((responseData) => {
+        setCards(responseData.tasks);
+        navigate(routeObj.MAIN);
+      })
+      .catch((err) => {
+        setError(err.message);
+      });
   }
-  
+
   return (
     <div className="pop-browse" id="popBrowse">
       <div className="pop-browse__container">
@@ -31,29 +47,49 @@ function PopBrowse() {
           <div className="pop-browse__content">
             <div className="pop-browse__top-block">
               <h3 className="pop-browse__ttl">Задача № {id}</h3>
-              <div className="categories__theme theme-top _orange _active-category">
-                <p className="_orange">Web Design</p>
-              </div>
+              <S.CategoriesTheme $topicColor={topicHeader[card.topic]}>
+                <p>{card.topic}</p>
+              </S.CategoriesTheme>
             </div>
             <div className="pop-browse__status status">
               <p className="status__p subttl">Статус</p>
-              <div className="status__themes">
-                <div className="status__theme _hide">
-                  <p>Без статуса</p>
-                </div>
-                <div className="status__theme _gray">
+              <S.StatusThemes>
+                {status.map((item, index) => {
+                  return (
+                    <S.StatusTheme
+                      key={index}
+                      htmlFor={index}
+                      style={
+                        editTask.status === item
+                          ? { backgroundColor: "#94a6be", color: "#ffffff" }
+                          : {}
+                      }
+                    >
+                      {item}
+                      <input
+                        onChange={handleInputChange}
+                        type="radio"
+                        id={index}
+                        name="status"
+                        value={item}
+                      />
+                    </S.StatusTheme>
+                  );
+                })}
+
+                {/* <div className="status__theme _gray">
                   <p className="_gray">Нужно сделать</p>
                 </div>
-                <div className="status__theme _hide">
+                <div className="status__theme">
                   <p>В работе</p>
                 </div>
-                <div className="status__theme _hide">
+                <div className="status__theme ">
                   <p>Тестирование</p>
                 </div>
-                <div className="status__theme _hide">
+                <div className="status__theme">
                   <p>Готово</p>
-                </div>
-              </div>
+                </div> */}
+              </S.StatusThemes>
             </div>
             <div className="pop-browse__wrap">
               <form
@@ -63,7 +99,7 @@ function PopBrowse() {
               >
                 <div className="form-browse__block">
                   <label htmlFor="textArea01" className="subttl">
-                    Описание задачи
+                    Описание задачи: {card.title}
                   </label>
                   <textarea
                     className="form-browse__area"
@@ -71,25 +107,29 @@ function PopBrowse() {
                     id="textArea01"
                     readOnly
                     placeholder="Введите описание задачи..."
-                  ></textarea>
+                  >
+                    {card.description}
+                  </textarea>
                 </div>
               </form>
-              
-              <Calendar/>
-            
+
+              <Calendar selected={selected} setSelected={setSelected} />
             </div>
-            <div className="theme-down__categories theme-down">
+            {/* <div className="theme-down__categories theme-down">
               <p className="categories__p subttl">Категория</p>
               <div className="categories__theme _orange _active-category">
                 <p className="_orange">Web Design</p>
               </div>
-            </div>
+            </div> */}
             <div className="pop-browse__btn-browse ">
               <div className="btn-group">
                 <button className="btn-browse__edit _btn-bor _hover03">
                   <a href="#">Редактировать задачу</a>
                 </button>
-                <button className="btn-browse__delete _btn-bor _hover03" onClick={deleteTask}>
+                <button
+                  className="btn-browse__delete _btn-bor _hover03"
+                  onClick={deleteTask}
+                >
                   <a href="#">Удалить задачу</a>
                 </button>
               </div>
