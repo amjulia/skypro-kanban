@@ -82,6 +82,7 @@ function PopNewCard() {
                 {topicWithColors.map((item, index) => {
                   return (
                     <S.CategoriesTheme
+                    key = {index}
                       htmlFor={index}
                       $topicColor={[item.color]}
                       style = {newTask.topic === item.topic ? {opacity: 1} : {}}
