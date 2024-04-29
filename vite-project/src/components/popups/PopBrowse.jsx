@@ -147,7 +147,7 @@ function PopBrowse() {
                 <S.BtnBor onClick={deleteTask}>Удалить задачу</S.BtnBor>
               </S.BtnGroup>
               <S.BtnBg>
-                <Link to={routeObj.MAIN}>Закрыть</Link>
+                <Link to={routeObj.MAIN}><p>Закрыть</p></Link>
               </S.BtnBg>
             </S.PopBrowseBtnBrowse>)}
             
@@ -165,7 +165,7 @@ function PopBrowse() {
                 </S.BtnBor>
               </S.BtnGroup>
               <S.BtnBg>
-                <Link to={routeObj.MAIN}>Закрыть</Link>
+                <Link to={routeObj.MAIN}><p>Закрыть</p></Link>
               </S.BtnBg>
             </S.PopBrowseBtnEdit>)}
             

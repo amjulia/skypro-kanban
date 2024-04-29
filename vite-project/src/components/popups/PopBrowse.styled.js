@@ -169,7 +169,9 @@ export const BtnBg = styled.button`
   outline: none;
   color: #ffffff;
   ${Hover01}
- 
+ p {
+  color:#ffffff
+ }
 `;
 export const PopBrowseBtnEdit = styled.div`
  display: flex;
