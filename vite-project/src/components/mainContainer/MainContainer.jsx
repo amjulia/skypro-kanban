@@ -24,7 +24,7 @@ const statusList = [
   "Готово",
 ];
 
-function MainContainer({switchTheme}) {
+function MainContainer() {
   const {user} = useUserContext();
    const {cards} = useTaskContext();
    const {setCards} = useTaskContext();
@@ -42,13 +42,13 @@ function MainContainer({switchTheme}) {
       setIsLoading(false);
     })
 
-  }, [user])
+  }, [])
 
   
   return (
     <Wrapper>
     <MainPage>
-      <Header switchTheme={switchTheme}/>
+      <Header />
       <Container>
         <MainBlock>
           <MainContent>

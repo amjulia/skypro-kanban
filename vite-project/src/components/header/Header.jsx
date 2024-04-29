@@ -27,7 +27,7 @@ function Header() {
           {isOpen && (
             <S.HeaderPop>
               <S.PopUserSetName>{user.name}</S.PopUserSetName>
-              <S.PopUserSetMail>ivan.ivanov@gmail.com</S.PopUserSetMail>
+              <S.PopUserSetMail>{user.login}</S.PopUserSetMail>
               <S.ButtonExit>
                 <Link to={routeObj.EXIT}><p>Выйти</p></Link>
               </S.ButtonExit>
