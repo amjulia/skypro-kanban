@@ -103,7 +103,7 @@ export const PopUserSetMail = styled.p`
   font-size: 14px;
   line-height: 21px;
   letter-spacing: -0.14px;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
 `;
 export const PopUserSetTheme = styled.div`
   display: flex;
