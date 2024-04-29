@@ -50,7 +50,7 @@ export const PopNewCardTtl = styled.h3`
   margin-bottom: 20px;
 `;
 
-export const PopNewCardClose = styled.a`
+export const PopNewCardClose = styled.div`
   position: absolute;
   top: 20px;
   right: 30px;

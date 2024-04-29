@@ -40,7 +40,7 @@ export const Button = styled.button`
   font-weight: 500;
   margin-right: 20px;
   ${Hover01};
-  & a {
+  & p {
   color: #FFFFFF;
 } 
 
@@ -153,7 +153,7 @@ export const ButtonExit = styled.button`
   border: 1px solid #565eef;
   ${Hover03}
   
-  &:hover a {
+  &:hover p {
     color: #ffffff;
   }
 `;

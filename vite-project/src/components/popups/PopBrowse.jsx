@@ -110,24 +110,25 @@ function PopBrowse() {
                   {!isEdited && (
                      <S.FormBrowseArea
                      disabled={true}
+                     defaultValue={card.description}
                      name="description"
                      id="textArea01"
                      readOnly=""
                      placeholder="Введите описание задачи..."
                    >
-                     {card.description}
+                    
                    </S.FormBrowseArea>
                   )}
                   {isEdited && (
                       <S.FormBrowseArea
                       onChange={handleInputChange}
+                      defaultValue={card.description}
                       disabled={false}
                       name="description"
                       id="textArea01"
                       placeholder="Введите описание задачи..."
                     >
-                      {card.description}
-                      
+                                          
                     </S.FormBrowseArea>
                   )}
                   

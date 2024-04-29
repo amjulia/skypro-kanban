@@ -19,7 +19,7 @@ function Header() {
         </S.HeaderLogo>
              <S.HeaderNav>
           <S.Button>
-            <Link to={routeObj.NEWCARD}>Создать новую задачу</Link>
+            <Link to={routeObj.NEWCARD}> <p>Создать новую задачу</p></Link>
           </S.Button>
           <S.HeaderUser onClick={ToggleDropdown} >
             {user.name}
@@ -29,7 +29,7 @@ function Header() {
               <S.PopUserSetName>{user.name}</S.PopUserSetName>
               <S.PopUserSetMail>ivan.ivanov@gmail.com</S.PopUserSetMail>
               <S.ButtonExit>
-                <Link to={routeObj.EXIT}>Выйти</Link>
+                <Link to={routeObj.EXIT}><p>Выйти</p></Link>
               </S.ButtonExit>
             </S.HeaderPop>
           )}
