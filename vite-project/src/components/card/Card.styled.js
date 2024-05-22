@@ -11,6 +11,7 @@ export const Cards = styled.div`
   align-items: flex-start;
   justify-content: stretch;
   padding: 15px 13px 19px;
+
 `;
 export const CardGroup = styled.div`
   width: 100%;

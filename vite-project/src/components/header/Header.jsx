@@ -3,8 +3,10 @@ import * as S from "./Header.styled";
 import { Container } from "../../styles/shared";
 import { Link } from "react-router-dom";
 import { routeObj } from "../../lib/const";
+import { useUserContext } from "../../contexts/hooks/useUser";
 
-function Header({onCardAdd, user}) {
+function Header() {
+  const {user} = useUserContext();
   const [isOpen, setIsOpen] = useState(false);
   const ToggleDropdown = () => setIsOpen((prevState) => !prevState);
 
@@ -16,25 +18,18 @@ function Header({onCardAdd, user}) {
              <Link to="/"><img src="images/logo.png" alt="logo" /> </Link>
         </S.HeaderLogo>
              <S.HeaderNav>
-          <S.Button
-            
-            onClick={onCardAdd}
-          >
-            <Link to={routeObj.NEWCARD}>Создать новую задачу</Link>
+          <S.Button>
+            <Link to={routeObj.NEWCARD}> <p>Создать новую задачу</p></Link>
           </S.Button>
           <S.HeaderUser onClick={ToggleDropdown} >
-            {user}
+            {user.name}
           </S.HeaderUser>
           {isOpen && (
             <S.HeaderPop>
-              <S.PopUserSetName>{user}</S.PopUserSetName>
-              <S.PopUserSetMail>ivan.ivanov@gmail.com</S.PopUserSetMail>
-              <S.PopUserSetTheme>
-                <S.PopUserSetThemeP>Темная тема</S.PopUserSetThemeP>
-                <S.PopUserSetThemeInput type="checkbox" name="checkbox" />
-              </S.PopUserSetTheme>
+              <S.PopUserSetName>{user.name}</S.PopUserSetName>
+              <S.PopUserSetMail>{user.login}</S.PopUserSetMail>
               <S.ButtonExit>
-                <Link to={routeObj.EXIT}>Выйти</Link>
+                <Link to={routeObj.EXIT}><p>Выйти</p></Link>
               </S.ButtonExit>
             </S.HeaderPop>
           )}

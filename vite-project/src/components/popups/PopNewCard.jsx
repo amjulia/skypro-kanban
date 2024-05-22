@@ -5,7 +5,7 @@ import Calendar from "../calendar/Calendar";
 import { useState } from "react";
 import { postToDo } from "../../api";
 import { useUserContext } from "../../contexts/hooks/useUser";
-import { topicHeader, topicWithColors, topicsMeanings } from "../../lib/topic";
+import { topicWithColors } from "../../lib/topic";
 import { useTaskContext } from "../../contexts/hooks/useTask";
 
 function PopNewCard() {

@@ -42,13 +42,13 @@ function MainContainer() {
       setIsLoading(false);
     })
 
-  }, [user])
+  }, [])
 
   
   return (
     <Wrapper>
     <MainPage>
-      <Header user={user.name}/>
+      <Header />
       <Container>
         <MainBlock>
           <MainContent>

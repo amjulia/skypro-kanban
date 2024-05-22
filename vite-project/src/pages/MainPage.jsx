@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
 import MainContainer from "../components/mainContainer/MainContainer";
 import { Outlet } from "react-router-dom";
 
 
 
-const MainPage = ({user}) => {
+const MainPage = () => {
 
   return (
     <>
  
-       <MainContainer user={user} />;
+       <MainContainer />
       <Outlet/>
     </>
   );

@@ -40,7 +40,7 @@ export const Button = styled.button`
   font-weight: 500;
   margin-right: 20px;
   ${Hover01};
-  & a {
+  & p {
   color: #FFFFFF;
 } 
 
@@ -103,7 +103,7 @@ export const PopUserSetMail = styled.p`
   font-size: 14px;
   line-height: 21px;
   letter-spacing: -0.14px;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
 `;
 export const PopUserSetTheme = styled.div`
   display: flex;
@@ -153,7 +153,7 @@ export const ButtonExit = styled.button`
   border: 1px solid #565eef;
   ${Hover03}
   
-  &:hover a {
+  &:hover p {
     color: #ffffff;
   }
 `;

@@ -31,3 +31,4 @@ export const topicWithColors =[
   {topic: "Copywriting", color:"_purple"}
 ]
 
+export const status = ["Без статуса", "Нужно сделать", "В работе", "Тестирование", "Готово"]
